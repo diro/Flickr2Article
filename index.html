@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Flickr2Article</title>	
+	<meta name="author" content="Diro - http://diro.tw">
+	<link href="css/bootstrap.min.css" rel="stylesheet">	
+	<style>	
+		#article_div {
+			margin: auto;
+			margin-left: :0px;
+			margin-top: 15px;			
+			background-color: #fefefe;
+			text-align: center; /* important */
+		}
+		
+	</style>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	
+	<link rel="stylesheet" href="js/Flickr2Article/Flickr2Article.css" type="text/css" charset="utf-8">		
+	<script src="js/Flickr2Article/Flickr2Article.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script>
+		// Replace the setID below with your setID
+		// Get your flickrAPI from here : http://www.flickr.com/services/api/misc.api_keys.html
+		$(document).ready(function() {
+		    
+			$('#refreshit').click(function() {
+				$('#article_div').flickr2Article({				
+				"flickrKey" : $('#flickr_key').val()
+			});
+			});
+
+			$('#getphotoset').click(function() {
+				$('#article_div').getPhotosetList({				
+				"flickrKey" : $('#flickr_key').val()
+			});
+			});
+
+			$('#photosetlist').change(function() {
+				$('#article_div').flickr2Article({				
+				"flickrKey" : $('#flickr_key').val()
+			});
+			});
+
+			$('#template').change(function() {
+				$('#article_div').flickr2Article({				
+				"flickrKey" : $('#flickr_key').val()
+			});
+			});
+		});
+			
+			
+
+		
+	</script>
+</head>
+<body>	
+    <script src="js/bootstrap.min.js"></script>
+	
+	<div id="op_panel" style="width:450px;height:450px;position:fixed;text-align:center;left:65px">
+		<h3>Flickr Info</h3>
+
+		<div style="text-align:center">
+			<span class="input-prepend">
+			<span class="add-on">USER ID</span><input id="user_id" type=text value="41348337@N00" class="input-xlarge"><br>
+			</span>
+			
+			<br>
+			
+			<span class="input-prepend">
+			<span class="add-on">Flickr Key</span><input id="flickr_key" type=text value="API Key"  class="input-xlarge">
+			</span>
+		</div>
+
+		<br>
+		<input type=button id="getphotoset" value="Get PhotoSet" class="btn btn-primary"><br><br>
+		<select id=photosetlist></select>
+
+		<h3>Template</h3>
+		<textarea id="template" rows=10 style="width:100%">[IMG_Z]<br>[DESC]<br><br>	
+		</textarea>
+		<!--
+		<h3>Photo Settings</h3><br>		
+		<input type="checkbox" id="specify_width">
+		<span class="input-prepend input-append">		
+		 <span class="add-on">WIDTH</span><input type=text id="photo_width" value="480" class=input-mini><span class="add-on">%</span>
+		</span>		
+		&nbsp;
+		<span class="input-prepend input-append">		
+		 <span class="add-on">HEIGHT</span><input type=text id="photo_height" value="320" class=input-mini><span class="add-on">PX</span>
+		</span>
+		-->
+				
+		
+		<!--<input type=button id="refreshit" value="Refresh" class="btn btn-success">-->
+		<!--<input type=button onClick=alert($('#article_div').html())  value="Get Source Code" class="btn btn-primary">-->
+		<h3>Article HTML</h3>
+		<textarea id="sourcecode" rows=10 style="width:100%;font-size:p6x;font-family:verdana"></textarea>
+		
+	</div>
+	<div id="article_div"  style="background-color:#ddeefd"></div>	
+</body>
+</html>
