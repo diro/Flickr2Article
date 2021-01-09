@@ -25,7 +25,7 @@
 				var user_id = $('#user_id').val();
 				
 		
-				$.getJSON("http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getList&user_id=" + user_id + "&api_key=" + settings.flickrKey + "&jsoncallback=?", function(setData){
+				$.getJSON("https://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getList&user_id=" + user_id + "&api_key=" + settings.flickrKey + "&jsoncallback=?", function(setData){
 				
 					var length = setData.photosets.photoset.length;					
 					var htmldata = "";			
@@ -72,7 +72,7 @@
 				}		
 
 				// Get the Flickr Set :)
-				$.getJSON("http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&extras=description&photoset_id=" + $('#photosetlist').find(":selected").val() + "&api_key=" + settings.flickrKey + "&jsoncallback=?", function(flickrData){
+				$.getJSON("https://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&extras=description&photoset_id=" + $('#photosetlist').find(":selected").val() + "&api_key=" + settings.flickrKey + "&jsoncallback=?", function(flickrData){
 					
 					var length = flickrData.photoset.photo.length;
 					var htmldata = "";			
