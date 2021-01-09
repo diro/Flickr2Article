@@ -2,6 +2,8 @@ Flickr2Article
 ==============
 
 Convert your photo+comment in flickr into a html. User can define the template for the html.<br><br>
+<b>Demo</b><br>
+http://diro.github.io/Flickr2Article/
 
 <b>Usage</b><br>
 1. Please fill your userid(http://idgettr.com/) and API key(http://www.flickr.com/services/api/misc.api_keys.html) first.<br>
